@@ -15,6 +15,7 @@ public class Coordinate{
      * @throws IllegalArgumentException when column or row is less than 0.
      */
     public Coordinate( int column, int row ) {
+    	
         throw new UnsupportedOperationException();
     }
 }
