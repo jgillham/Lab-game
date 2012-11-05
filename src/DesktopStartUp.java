@@ -9,13 +9,17 @@ public class DesktopStartUp {
 		/**
      * Initializes the game and launches the UI.
      */
-	//new DesktopStartUpTest();
     static public void main( String[] args ) {
     	System.out.println("Start the  game...are you ready? y Or n");
     	DesktopStartUpTest q=new DesktopStartUpTest();
-    	if (q.testMain("n")) {
+    	if (q.testMain1(args[0])) {
     							System.out.println("Exit game..");
     							}
+    	if (q.testMain2(args[0])) {
+								System.out.println("Start game..");
+								}
+    	
+    	
         //throw new UnsupportedOperationException();
     }
 
