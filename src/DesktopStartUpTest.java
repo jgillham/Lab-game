@@ -1,4 +1,4 @@
-import static org.junit.Assert.*;
+
 
 import org.junit.Test;
 
@@ -6,8 +6,12 @@ import org.junit.Test;
 public class DesktopStartUpTest {
 
 	@Test
-	public void testMain() {
-		fail("Not yet implemented");
+	public void testMain(String insert) {
+		String expected="y";
+		if (!(expected.equals(insert))) {
+			System.out.println("Exit game...");
+		}
+		//Assert.fail("Exit Game...");
 	}
 
 }

@@ -11,10 +11,10 @@ public class DesktopStartUp {
      */
 	//new DesktopStartUpTest();
     static public void main( String[] args ) {
-    	//args[0]="n";
     	System.out.println("Start the  game...are you ready? y Or n");
-     
-        throw new UnsupportedOperationException();
+    	DesktopStartUpTest q=new DesktopStartUpTest();
+    	q.testMain("n");
+        //throw new UnsupportedOperationException();
     }
 
 
