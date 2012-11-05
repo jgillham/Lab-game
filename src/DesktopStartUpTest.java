@@ -7,7 +7,7 @@ public class DesktopStartUpTest {
 
 	@Test
 	public boolean testMain(String insert) {
-		String expected="y";
+		String expected="n";
 		if (expected.equals(insert)) {
 				return true;		
 				}

@@ -13,7 +13,7 @@ public class DesktopStartUp {
     static public void main( String[] args ) {
     	System.out.println("Start the  game...are you ready? y Or n");
     	DesktopStartUpTest q=new DesktopStartUpTest();
-    	if (!(q.testMain("y"))) {
+    	if (q.testMain("n")) {
     							System.out.println("Exit game..");
     							}
         //throw new UnsupportedOperationException();
