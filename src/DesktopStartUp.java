@@ -13,7 +13,9 @@ public class DesktopStartUp {
     static public void main( String[] args ) {
     	System.out.println("Start the  game...are you ready? y Or n");
     	DesktopStartUpTest q=new DesktopStartUpTest();
-    	q.testMain("n");
+    	if (!(q.testMain("y"))) {
+    							System.out.println("Exit game..");
+    							}
         //throw new UnsupportedOperationException();
     }
 
