@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Labyrinth : A game of twists and turns where the player tries to find the exit of the laborinth." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Labyrinth</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jgillham/Lab-game">View on GitHub</a>
+
+          <h1 id="project_title">Labyrinth</h1>
+          <h2 id="project_tagline">A game of twists and turns where the player tries to find the exit of the laborinth.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jgillham/Lab-game/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jgillham/Lab-game/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+Labyrinth Maze
+</h1>
+
+<h2>
+Resources
+</h2>
+
+<p>Download Git Client: <a href="http://windows.github.com">Windows</a>, <a href="http://mac.github.com">Mac</a>
+<br><br>
+Git:
+<a href="http://git-scm.com/book">Git Book</a>, <a href="http://gitready.com">Git Reference</a>, <a href="http://gitfu.wordpress.com">Git Advanced Tricks</a>
+<br><br></p>
+
+<h2>
+WHO ARE WE:
+</h2>
+
+<p>We are the Intermediate Game Programming Group at Metropolitan State University of Denver.</p>
+
+<h2>
+CONTRIBUTING:
+</h2>
+
+<p>Checkout our <a href="https://groups.google.com/d/forum/msudenver-int-game-group">forum</a> to see where we are going with this project.
+<br>
+Anyone is free to contribute. Just follow the steps below:
+<br>
+1. Fork the project.
+<br>
+2. Clone your fork.
+<br>
+3. Get to work.
+<br>
+4. On the fork click pull request.
+<br><br></p>
+
+<p>Alternatively:
+<br>
+1. <a href="https://github.com/jgillham/Lab-game/zipball/master">Download</a> the source.
+<br>
+2. Get to work.
+<br>
+3. Submit your work to this <a href="mailto:usajoshgillham@gmail.com">address</a>.
+<br></p><p>
+I welcome you to become part of our google discussion group. We will discuss new features, concerns, and bugs. You can also be a decider of our next game project. Find us <a href="https://groups.google.com/d/forum/msudenver-int-game-group">here</a>.
+</p><br><h2>
+DESCRIPTION:
+</h2>
+
+<p></p><p>
+The goal will be to find the exit of the maze. The player will use the arrow keys to navigate the twists and turns. The player wins when they exit the maze.
+</p><br><p>
+The GUI will show 9-tiles with the player's character at the center tile. The outer 8 tiles represent the surroundings of the player. As the player navigates through the maze, the GUI will show the tiles changing.
+</p><br><h2>
+FEATURES:
+</h2>
+
+<p>-Exit the maze.
+<br>
+-Use the arrow keys to navigate.
+<br>
+-9-tile GUI display.
+<br>
+-Restart the game after winning.
+<br></p>
+
+<h2>
+CLASS SUMMARY:
+</h2>
+
+<h3>
+Logic
+</h3>
+
+<p>-Accepts a move if valid and commits it into the game.
+<br>
+-Calls a GameEvent when the game has been won.
+<br>
+-Calls a GameEvent when the player has moved.
+<br>
+-Places the character into the starting position at the beginning of the game.
+<br></p>
+
+<h3>
+Maze
+</h3>
+
+<p>-Gets a list of possible moves.
+<br>
+-Information is stored as a 2D Wall array.
+<br>
+-Loads a maze from a file.
+<br>
+-Checks if a coordinate is within the bounds of the maze.
+<br></p>
+
+<h3>
+Character
+</h3>
+
+<p>-Contains the current position in the maze.
+<br></p>
+
+<h3>
+TileArtist
+</h3>
+
+<p>-Draws/updates the map tiles on the GUI.
+<br></p>
+
+<h3>
+UI
+</h3>
+
+<p>-Receives key presses and submits them to the Logic.
+<br>
+-Shows the player.
+<br>
+-Shows the player's surroundings.
+<br>
+-Shows game stats i. e. scores and time limits.
+<br>
+-Shows the player when they win.
+<br>
+-Asks the player if they want to play again and, if so, starts the new game.
+<br></p>
+
+<h3>
+Messenger
+</h3>
+
+<p>-Notifies the UI the game is won.
+<br>
+-Notifies the UI the player has moved.
+<br></p>
+
+<h3>
+Wall
+</h3>
+
+<p>-Holds information about which directions are blocked.
+<br></p>
+
+<h2>
+GAME SCENARIOS:
+</h2>
+
+<h4>
+Player Presses A Key
+</h4>
+
+<p>-JFrame class calls event listener UI.keyReleased().
+<br>
+-keyReleased() calls Logic.makeMove().
+<br>
+-makeMove() checks maze.getWall().getDirections() to ensure move is valid.
+<br>
+-makeMove() checks maze.contains() to see if the move is inside the map.
+<br>
+-If not inside, the player has won the game and ui.playerWins() is called.
+<br>
+-If valid, Logic updates the character position with character.getCoordinate().translate().
+<br>
+-If valid, Logic calls UI.playerMoved() to tell it the view should be updated.
+<br>
+-If valid, UI calls TileArtist.repaint() for each tile.
+<br>
+-If valid, eventually repaint() will call paintComponent().
+<br>
+-If valid, paintComponent() updates the screen. 
+<br></p>
+
+<h3>
+Game Starts Up
+</h3>
+
+<p>-main creates/loads the maze.
+<br>
+-main creates a new character.
+<br>
+-main creates a new Logic class
+<br>
+-Logic constructor calls newMaze()
+<br>
+-newMaze() sets the starting position (could be random).
+<br>
+-main creates a new UI.
+<br>
+-main sets the event listener in Logic to the UI.
+<br></p>
+
+<h3>
+Player wins
+</h3>
+
+<p>-logic.makeMove() calls ui.playerWins()
+<br>
+-GUI shows the player won.
+<br>
+-GUI asks the player if they want to play again.
+<br>
+-GUI calls logic.newMaze() to restart the game.
+<br></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Labyrinth maintained by <a href="https://github.com/jgillham">jgillham</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
