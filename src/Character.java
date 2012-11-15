@@ -1,4 +1,3 @@
-
 /**
  * Holds information about the players character such as position.
  * 
@@ -24,6 +23,9 @@ public class Character {
      */
     public Coordinate getCoordinate( ) {
         throw new UnsupportedOperationException();
+        System.out.println("Stephy is Epic!!!XD");
+
     }
+
 }
 
